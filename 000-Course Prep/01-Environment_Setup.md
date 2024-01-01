@@ -1,15 +1,15 @@
 # Development Environment Setup
 ## Software Install
 Download and install the following software for your operating system :
-1.  [Node.js version 16 or greater](https://nodejs.org/en/) - Latest LTS version is recommended.
+1.  [Node.js version 18 or greater](https://nodejs.org/en/) - Latest LTS version is recommended.
     1.  Older versions can be found in the [distribution archives](https://nodejs.org/dist/).
-2.  [MongoDB Community version 5 or greater](https://www.mongodb.com/try/download/community)
+2.  [MongoDB Community version 6 or greater](https://www.mongodb.com/try/download/community)
 3. [VS Code](https://code.visualstudio.com/Download)
 4. [Git SCM](https://git-scm.com/download/) - Includes "Git BASH" (MINGW console emulator for Windows)
    1. Alternative install options
       1. Linux - Install from your systems package manager like `sudo apt-get install git`
       2. MAC OS - Install using `brew` if available like `brew install git`
-5. [Google Chrome](https://www.google.com/chrome/index.html)
+5. [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Google Chrome](https://www.google.com/chrome/index.html)
 6. Optional
    1. [Robo3T](https://robomongo.org/download) - Lightweight MongoDB Client
    2. [Mongo Compass](https://www.mongodb.com/products/compass) - Official MongoDB client.  It has some really nice functionality but is limited in other ways.

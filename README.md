@@ -1,4 +1,4 @@
-# **Arkansas Coding Academy - Node.js and MongoDB (2021)**
+# **Arkansas Coding Academy - Node.js and MongoDB (2024)**
 ## **Course Description**
 Learn real world uses for Node.js and MongoDB as we start at an introductory level then progress through intermediate and advanced applications.  This course will focus on flexible utilities, scalable REST API development and integration, task automation, comprehensive testing, dependency management, library creation and publishing, and using MongoDB for storing and analyzing data with NoSQL.  UI design, implementation, and client-side applications will also be covered.
 All of the lesson outlines and presentations can be found in [Github course project repository](https://github.com/carpaltunnel/ArCA-NodeJS-2024-Spring)
@@ -8,7 +8,7 @@ All of the lesson outlines and presentations can be found in [Github course proj
 Due to the portable nature of Node.js any mainstream OS including Linux, MacOS, and Windows will be sufficient.  
 
 ### **Browser**
-Any modern browser should work but since Node.js uses the Google V8 engine, [Chrome](https://www.google.com/chrome/) is recommended.
+Any modern browser should work but [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Chrome](https://www.google.com/chrome/) are recommended.
 
 ### **Node.js**
 To make use of powerful recent additions to Node.js, this course will require v12.0 or newer.  I suggest the latest LTS (Long Term Support) version which is v20 at the time of this update (2024-01-01).  You can find the appropriate install package for your operating system on the [Node.js Download Page](https://nodejs.org/en/download/).  Older versions can be found in the [archives](https://nodejs.org/dist/) if needed.  We'll be coding in the ES6/ES2015+ format but comparisons to older versions will be presented for historical context since you will come across them in the wild.
@@ -24,7 +24,7 @@ These VSCode extensions may make development easier :
 
 
 ### **MongoDB**
-MongoDB v4.4 or newer will be used for this course - install the latest LTS version (v6 as of 2023-01-24).  The Community version is free and can be found on the [MongoDB Download Page](https://www.mongodb.com/try/download/community).  [Robo3T](https://robomongo.org/download) is a lightweight client that can be used to query MongoDB.
+MongoDB v4.4 or newer will be used for this course - install the latest LTS version (v7 as of 2023-01-24).  The Community version is free and can be found on the [MongoDB Download Page](https://www.mongodb.com/try/download/community).  [Robo3T](https://robomongo.org/download) is a lightweight client that can be used to query MongoDB.
 
 ### **Git**
 Source control will be managed by [Git](https://git-scm.com/) and references will be provided on [Github](https://github.com/carpaltunnel/ArCA-NodeJS-2024-Spring). All required git functionality can be completed using only the command line but GUIs such as [GitKraken](https://www.gitkraken.com/), [SourceTree](https://www.sourcetreeapp.com/), [GitHub Desktop](https://desktop.github.com/) and others are available.  They are no required since Git functionality is built into VS Code and we will mostly use this.
