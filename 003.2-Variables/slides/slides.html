@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <title>Slides</title>
-    
-    <meta name="description" content="Simple example impress.js slide show" />
-    <meta name="author" content="Henrik Ingo" />
 
     <!-- This file contains common styles for example presentations. -->
     <link href="../../resources/impress.js/css/impress-common.css" rel="stylesheet" />   
@@ -73,160 +70,90 @@
         your cooler impress.js presentations.
     -->
     <div id="title" class="step slide title" data-x="-2200" data-y="-3000">
-        <h1>MongoDB, Express, Angular2, Node.js</h1>
-        <h2>Arkansas Code Academy</h2>
-        <h3>Cameron Carper</h3>
+        <h1>Variables Deep Dive</h1>
+        <br /><br /><br />
+        <br /><br /><br />
+        <p>In this lesson we'll cover variables in more depth.  Specifically, common "gotchas" and more reasons to avoid <code>var</code></p>
+        <br />
 
         <div class="notes">
         </div>
     </div>
 
-    <div id="introductions" class="step slide" data-rel-x="2200" data-rel-y="0">
-        <h1>Introductions</h1>
-        <p>A quick introduction from everyone in class.</p>
-        <br>
-        Suggested topics :
-        <ol>
-            <li>Name</li>
-            <li>City, State</li>
-            <li>Current job</li>
-            <li>Hobbies, pets, etc</li>
-        </ol>
-
+    <div id="const1" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>const</code> ... and when it's not</h1>
+        <pre><code class="javascript">
+            const myObject = {
+                myString: 'test string',
+                myNumber: 42,
+              };
+            const myArray = [];
+            
+            myObject.myBoolean = true;
+            myArray.push(1);
+            myArray.push(2);
+            myArray.push(3);
+        </code></pre>
+        <p>The important part is that const's can not be reassigned.</p>
         <div class="notes">
         </div>
     </div>
 
-    <div id="aboutme" class="step slide" data-rel-x="2200" data-rel-y="0">
-        <h1>About Me</h1>
-        <ul>
-            <li>Education</li>
-            <ul>
-                <li>Arkansas Tech</li>
-            </ul>
-            <li>Certifications</li>
-            <li>Work Experience</li>
-            <ul>
-                <li>Freelance</li>
-                <li>Acxiom</li>
-                <li>Acoustic</li>
-            </ul>
-            <li>Languages, Technologies, and Operating Systems</li>
-        </ul>
+    <div id="const2" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>const</code> Reassignment Errors</h1>
 
-        <div class="notes">
-        </div>
-    </div>
-
-    <div id="course-structure" class="step slide" data-rel-x="2200" data-rel-y="0">
-        <h1>Course Structure</h1>
-        <ul>
-            <li>Contact points (Slack/email)</li>
-            <li>Class :  Monday / Wednesday, 1800 - 2100, January 8 - June 21</li>
-            <li>June dedicated to final project</li>
-            <li>Saturday sessions</li>
-            <li>Approximate timing of topics</li>
-            <li>Quizzes and lab assignments</li>
-            <li>Final projects (requirements, rubric)</li>
-        </ul>
-
-        <div class="notes">
-        </div>
-    </div>
-
-    <div id="class-structure" class="step slide" data-rel-x="2200" data-rel-y="0">
-        <h1>Class Structure</h1>
-        <ul>
-            <li>Start/End on time, break every hour</li>
-            <li>Slides (purpose)</li>
-            <li>Explain topic, give example, ask for questions, repeat</li>
-            <li>Questions are <strong>very</strong> important!</li>
-            <li>Zoom video share</li>
-        </ul>
-
-        <div class="notes">
-        </div>
-    </div>
-
-    
-
-    <div id="goals" class="step slide">
-        <h1>Course Goals</h1>
-        <ul>
-            <li>VS Code</li>
-            <li>Javascript proficiency using ES6+</li>
-            <li>Node.js Module development and usage</li>
-            <li>Develop and interact with REST APIs</li>
-            <li>(Auto) Documentation and Testing</li>
-            <li>MongoDB</li>
-            <li>Typescript</li>
-            <li>Client side development with HTML, CSS, and Angular</li>
-        </ul>
-
-        <div class="notes">
-        </div>
-    </div>
-
-    <!--
-        This element introduces rotation.
+        <pre><code class="javascript">
+            const myObject = {
+                myString: 'test string',
+                myNumber: 42,
+              };
+              
+            myObject = 1; // Uncaught TypeError: invalid assignment to const 'myObject'
+        </code></pre>
         
-        Notation shouldn't be a surprise. We use `data-rotate="30"` attribute, meaning that this
-        element should be rotated by 30 degrees clockwise.        
-    -->
-    <div id="node1" class="step slide">
-        <h1>Node.js</h1>
-        <ul>
-            <li>What is it?</li>
-            <li>Who uses it?  Netflix, LinkedIn, Uber, PayPal, NASA, eBay...</li>
-            <li>What is it good for?</li>
-            <li>What is it not good for?</li>
-            <li>Where can we use it?</li>
-        </ul>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="var-hoist" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>var</code> Hoisting</h1>
+        <p><code>var</code>'s are "hoisted" to the top of their scope</p>
+        <pre><code class="javascript">
+            myTest = 'a test';
+            console.log('The value of undeclared variable myTest is ' + myTest);
+            var myTest = 'declared here';
+            console.log('The value of declared variable myTest is ' + myTest);
+        </code></pre>
+
+        <p><code>myTest</code> appears to be used before being declared due to hoisting.  Don't use <code>var</code>.</p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="null-vs-undefined" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>null</code> Versus <code>undefined</code></h1>
+        <p>Null is "empty" or non-existent and must be assigned.  Undefined means that a variable has (potentially) been declared but has never been assigned and is therefore not defined.</p>
+
+        <pre><code class="javascript">
+            const iAmNull = null;
+            let iAmUndefined;
+            console.log(iAmNull); // null
+            console.log(iAmUndefined); // undefined
+        </code></pre>
+
+        <p>Note that const declarations require initialization.  Using <code>const</code> before <code>iAmUndefined</code> would result in a Syntax Error.</p>
 
         <div class="notes">
         </div>
     </div>
 
-    <div id="node-basics" class="step slide">
-        <h1>Node.js Basics</h1>
-        <ul>
-            <li>Asynchronous programming</li>
-            <li>V8 Engine</li>
-            <li>Interpreter / REPL</li>
-            <li>Typing (dynamic, loose)</li>
-            <li>The Event Loop...</li>
-        </ul>
- 
+    <div id="" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1></h1>
+        
         <div class="notes">
         </div>
     </div>
-
-    <div id="event-loop" class="step slide">
-        <center><img src="images/event-loop.jpg" style="width: 95%;" /></center>
-
-        <div class="notes">
-        </div>
-    </div>
-
-    <div id="mongo" class="step slide">
-        <h1>MongoDB</h1>
-        <ul>
-            <li>What is it?</li>
-            <ul>
-                <li>Not a RDBMS!</li>
-                <li>Document store</li>
-                <li>NoSQL (is not SQL)</li>
-            </ul>
-            <li>What is it good for?</li>
-            <li>What is it not good for?</li>
-            <li>Why is it a good match for Node.js?</li>
-        </ul>
-
-        <div class="notes">
-        </div>
-    </div>
-
-   
 
 
     <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
@@ -258,6 +185,9 @@
 <script type="text/javascript" src="../../resources/impress.js/extras/markdown/markdown.js"></script>
 <script type="text/javascript" src="../../resources/impress.js/extras/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 -->
+<link rel="stylesheet" href="../../resources/highlight.js/styles/darcula.css">
+<script type="text/javascript" src="../../resources/highlight.js/highlight.pack.js"></script>
+
 <!--
     To make all described above really work, you need to include impress.js in the page.
     You also need to call a `impress().init()` function to initialize impress.js presentation.
