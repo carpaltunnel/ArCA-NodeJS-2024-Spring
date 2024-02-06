@@ -34,7 +34,7 @@ const vehicles = [
   {"make":"Chevrolet","model":"Silverado","year":2009,"vin":"5dd65083-b991-4a0a-8cd5-5cb324dad29f"},
 ];
 
-const recalls = [
+const recallList = [
   {"vin":"9a11ff3c-7d9d-41bf-8b20-b8f26ebad785","reason":"Risk of fire"},
   {"vin":"3e51c23e-abad-4f01-974d-37be0366514d","reason":"Leaf springs"},
   {"vin":"bd283567-8114-44a6-82cb-112bde49fa6e","reason":"Electronics failure"},
