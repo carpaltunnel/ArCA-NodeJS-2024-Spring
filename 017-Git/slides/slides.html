@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Slides</title>
+
+    <!-- This file contains common styles for example presentations. -->
+    <link href="../../resources/impress.js/css/impress-common.css" rel="stylesheet" />   
+    <!--
+        This file contains styles specific for this example presentation. 
+    -->
+    <link href="../../resources/impress.js/css/classic-slides.css" rel="stylesheet" />
+    
+</head>
+
+<body class="impress-not-supported">
+<!--
+    This fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    This is the core element used by impress.js: the wrapper for your presentation steps. 
+    In this element all the impress.js magic happens.
+    
+    data-transition-duration sets the time in microseconds that is used for the
+    animation when transtitioning between slides.
+    
+    The width, height, scale and perspective options define a target screen size that you should
+    design your CSS against. impress.js will automatically scale all content to different screen
+    sizes. See DOCUMENTATION.md for details. Below, I have targeted full HD screen resolution.
+    
+    data-autoplay can be used to set the time in seconds, after which presentation
+    automatically moves to next slide. It can also be set individually for each
+    slide, but here we just set a common duration for all slides.
+-->
+<div id="impress"
+    data-transition-duration="1000"
+
+    data-width="1920"
+    data-height="1080"
+    data-max-scale="3"
+    data-min-scale="0"
+    data-perspective="1000"
+>
+
+    <!--
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        This step is auto-assigned the id "step-1". You can also use `#step-1` in a link, to 
+        point directly to this particular step.
+        
+        Positioning information is passed through data-* attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'. It will not 
+        be rotated or scaled.
+        
+        The "step" class is what *must* be used for every "slide". In this example we also use the "slide"
+        class, which adds a rectangle with some background and makes this presentation look like a traditional
+        powerpoint slide show. The "slide" class is entirely optional and indeed you wouldn't use it for
+        your cooler impress.js presentations.
+    -->
+    <div id="title" class="step slide title" data-x="-2200" data-y="-3000">
+        <h1><a href="https://git-scm.com/">Git SCM</a></h1>
+        <br /><br />
+        <br /><br /><br /><br />
+        <p>Git lets us version, manage, and coordinate our code changes across multiple developers.</p>
+
+
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="init-clone" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>git init / clone</code></h1>
+
+        <p>To create a brand new repo, execute <code>git init</code></p>
+        <br /><br />
+        <p>To clone an existing repo, use <code>git clone repo-url</code>.  For example, <code>git clone https://github.com/carpaltunnel/ArCA-Nodejs-2021-Public.git</code></p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="commits" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>git status / add / commit</code></h1>
+
+        <p>A "commit" is a change that you've made locally that you would like to be committed to the git repo so it becomes part of the change log and available to other repo users. Changes are not committed automatically, you have to explicitly add and commit them.</p>
+        <pre><code>echo '123' > test.txt
+git status
+git add test.txt
+git commit -m 'Committing test.txt for testing purposes'
+git status</code></pre>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="diff" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>git diff</code></h1>
+
+        <p><code>git diff</code> will show you the difference between your local working copy and the committed code. It's a good idea to always check the diff before you commit to be sure you're committing what you should be (and nothing more).</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="branches" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Branches</h1>
+
+        <p>Creating a branch is like getting your own special copy of the code that you can work on without affecting anyone else. It can even exist in your local repository only so no one else could possibly have access to it until you "push" it.</p>
+
+        <br />
+        <ol>
+            <li>git branch new-branch-name - Create new branch from current commit</li>
+            <li>git branch - list branches available</li>
+            <li>git checkout branch-name - Switch to branch named 'branch-name'</li>
+        </ol>
+
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="push" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Push it...</h1>
+
+        <center><img src="images/git-fire.png" style="width: 50%;" /></center>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="merge" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Merging Branches</h1>
+
+        <p>Locally, to merge code between branches you simply checkout the target branch (where we'll merge code INTO), say "master", then execute git merge source-branch-name where "source-branch-name" is where we're merging code FROM. If there are no conflicts that can't be automatically resolved, changes from "source-branch-name" will be copied/merged into "master" and a note will be added to the commit log.</p>
+        <pre><code>git checkout master
+git merge bugfix-branch</code></pre>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="pull-requests" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Pull Requests</h1>
+
+        <p> A pull request, or "PR", is just a request to the repo maintainer to merge your branch into another branch. A diff between your source branch and the target branch will be created and the maintainer can choose to approve/merge the PR, reject it, or add notes and to-do's that you need to complete before it will be approved.</p>
+        <pre><code># Assuming we have "bugfix-branch" and "master", we want to merge "bugfix-branch" to master remotely
+git checkout bugfix-branch
+# Make changes and commit them - excluded here
+git push origin
+# This will probably return a URL you can use to create the pull request.</code></pre>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="git-graph" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Git Graph</h1>
+
+        <p>Git Graph is a nice plugin for VS Code that will allow you to visualize the branches, commits, and merges in your repo.</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="conflicts" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Merge Conflicts</h1>
+
+        <p>You may find yourself working in the exact same area of code as another person simultaneously. When this happens, Git may not be able to automatically figure out how to merge the code cleanly. If it can't, a "merge conflict" will be thrown and you will need to "resolve" the conflict manually. There are many tools available to do this. OpenDiff is a common one, but it's also possible in VSCode as well as other IDEs and Git GUIs.</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="stash" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Stash</h1>
+
+        <p>The "stash" command allows you to store your changes locally without actually committing them. Simply executing the command <code>git stash</code> will stash the changes on your working copy. <code>git stash pop</code> will restore the latest stashed code</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="tags" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Tags</h1>
+
+        <p>Tags are basically a named pointer, or label, to a certain point in time. They often get used for releases or important points in time that may need to be referenced or recovered later. Generally, you'll probably want to use annotated tags and you can create them with git tag -a myTagName. The annotated tags include information about who created the tag and when, where non-annotated (lightweight) tags are simply a name for an object/commit.</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="branching-models" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Branching Models</h1>
+
+        <p><a href="https://nvie.com/posts/a-successful-git-branching-model/">NVIE git-flow</a> vs <a href="https://guides.github.com/introduction/flow/">GitHub flow</a>...</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
+         so that it covers all the other slides you just saw. 
+         It's a common way of zooming out at the end, to show the whole presentation.
+         In CSS, we set pointer-events:none to make this slide non-clickable. 
+         It makes a difference at least for SVG content, such as the mermaid diagram. -->
+    <div id="overview" class="step" data-x="4500" data-y="1500" data-scale="10" style="pointer-events: none;">
+    </div>
+</div>
+
+<!--
+    Add navigation-ui controls: back, forward and a select list.
+    Add a progress indicator bar (current step / all steps)
+    Add the help popup plugin
+-->
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js, markdown.js and MathJax.js from extras.
+     If you're curious about details, these are initialized in src/plugins/extras/extras.js 
+<script type="text/javascript" src="../../resources/impress.js/extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mermaid/mermaid.min.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+-->
+<link rel="stylesheet" href="../../resources/highlight.js/styles/darcula.css">
+<script type="text/javascript" src="../../resources/highlight.js/highlight.pack.js"></script>
+
+<!--
+    To make all described above really work, you need to include impress.js in the page.
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. 
+-->
+<script type="text/javascript" src="../../resources/impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
