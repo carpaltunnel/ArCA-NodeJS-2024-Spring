@@ -1,0 +1,13 @@
+{
+  "name": "task-example",
+  "version": "1.0.0",
+  "description": "Example of using NPM tasks/scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./utils/db-setup.js && node ./utils/tests.js",
+    "start": "node index.js",
+    "dbSetup": "node ./utils/db-setup.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
