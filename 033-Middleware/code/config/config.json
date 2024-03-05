@@ -1,0 +1,32 @@
+{
+  "appenv": "default",
+  "middleware": {
+    "session": null,
+    "appsec": null,
+    "favicon": null,
+    "static": null,
+    "router": {
+      "module": {
+        "arguments": [{ "directory": "path:./controllers" }]
+      }
+    },
+    "errorHandler": {
+      "enabled": true,
+      "priority": 1,
+      "router": "/",
+      "module": {
+        "name": "path:middleware/errorHandler"
+        
+      }
+    },
+    "colorChecker": {
+      "enabled": true,
+      "priority": 10,
+      "router": "/widgets",
+      "module": {
+        "name": "path:middleware/colorChecker"
+        
+      }
+    }
+  }
+}
