@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Slides</title>
+
+    <!-- This file contains common styles for example presentations. -->
+    <link href="../../resources/impress.js/css/impress-common.css" rel="stylesheet" />   
+    <!--
+        This file contains styles specific for this example presentation. 
+    -->
+    <link href="../../resources/impress.js/css/classic-slides.css" rel="stylesheet" />
+    
+</head>
+
+<body class="impress-not-supported">
+<!--
+    This fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    This is the core element used by impress.js: the wrapper for your presentation steps. 
+    In this element all the impress.js magic happens.
+    
+    data-transition-duration sets the time in microseconds that is used for the
+    animation when transtitioning between slides.
+    
+    The width, height, scale and perspective options define a target screen size that you should
+    design your CSS against. impress.js will automatically scale all content to different screen
+    sizes. See DOCUMENTATION.md for details. Below, I have targeted full HD screen resolution.
+    
+    data-autoplay can be used to set the time in seconds, after which presentation
+    automatically moves to next slide. It can also be set individually for each
+    slide, but here we just set a common duration for all slides.
+-->
+<div id="impress"
+    data-transition-duration="1000"
+
+    data-width="1920"
+    data-height="1080"
+    data-max-scale="3"
+    data-min-scale="0"
+    data-perspective="1000"
+>
+
+    <!--
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        This step is auto-assigned the id "step-1". You can also use `#step-1` in a link, to 
+        point directly to this particular step.
+        
+        Positioning information is passed through data-* attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'. It will not 
+        be rotated or scaled.
+        
+        The "step" class is what *must* be used for every "slide". In this example we also use the "slide"
+        class, which adds a rectangle with some background and makes this presentation look like a traditional
+        powerpoint slide show. The "slide" class is entirely optional and indeed you wouldn't use it for
+        your cooler impress.js presentations.
+    -->
+    <div id="title" class="step slide title" data-x="-2200" data-y="-3000">
+        <h1>MongoDB</h1>
+        <br /><br />
+        <br /><br />
+        MongoDB is a general purpose, document-based, distributed database built for modern application developers both on-prem and in the cloud.
+        <div class="notes">
+        </div>
+    </div>
+
+
+    <div id="document-store" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Document Store</h1>
+        <p><strong>Not</strong> a relational database.</p>
+        
+        <ul>
+            <li>JSON documents as "records"</li>
+            <li>JSON properties as "fields"</li>
+            <li>Collections instead of "tables"</li>
+            <li>Flexible document formats</li>
+            <li>Nested objects and arrays allowed</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="rdbms-similar" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>RDBMS Similarities</h1>
+        <p>While not a RDBMS, MongoDB is a database and shares many common features with a RDBMS.</p>
+        
+        <ul>
+            <li>CRUD (Create, Read, Update, Delete) Queries</li>
+            <li>Data Types (simple)</li>
+            <li>Indexes</li>
+            <li>ACID (Atomicity, Consistency, Isolation, and Durability) Compliant</li>
+            <li>Joins (to a degree)</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="types" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>BSON Types</h1>
+        <p>While generally not required, we can specify the type of the properties that we store in Mongo.</p>
+        
+        <ol>
+            <li>String</li>
+            <li>Date</li>
+            <li>Object / Array</li>
+            <li>Number (Double, 32/64 bit Integer, Long, Decimal)</li>
+            <li>Boolean</li>
+        </ol>
+        
+        <div class="notes">
+        </div>
+    </div>
+    
+    <div id="install" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Install</h1>
+        <p><a href="https://www.mongodb.com/try/download/community ">https://www.mongodb.com/try/download/community</a></p>
+        
+        <pre><code class="shell"># Extract Mongo package
+# cd to mongo/bin
+mkdir data
+./mongod --dbpath ./data</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="security-warning" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Security Warning</h1>
+        <p><strong>WARNING : </strong>The default configuration does not enforce any authentication or authorization restrictions. Anyone that can connect to your machine can do anything to your database. This is fine for local development on your private network but should never be done in a "real" environment or exposed to the internet.</p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="setup" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Setup</h1>
+        <p>Mongo is very "helpful" when running in local development mode. Rather than requiring you to explicitly create databases and collections, it will simply create the entities when you first use them</p>
+        
+        <pre><code class="javascript">show databases; // or show dbs;
+use myDBname;
+db.testCollection.insertOne({"test": true});
+show collections;</code></pre>
+
+        <p>Not always true.</p>
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="crud" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>CRUD</h1>
+        <ul>
+            <li><code>insertOne({})</code></li>
+            <li><code>insertMany([])</code></li>
+            <li><code>find(filter, projection)</code></li>
+            <li><code>findOne(filter, projection)</code></li>
+            <li><code>updateOne(filter, update, options)</code></li>
+            <li><code>updateMany(filter, update, options)</code></li>
+            <li><code>replaceOne(filter, update, options)</code></li>
+            <li><code>deleteOne(filter)</code></li>
+            <li><code>deleteMany(filter)</code></li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="mock-data-import" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Mock Data and <code>mongoimport</code></h1>
+        <p>Before we talk about operators, let's generate some mock data and import it so we have something to query without
+            needing to manually create it.
+        </p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="mongo-ides" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Mongo IDEs</h1>
+        <ul>
+            <li><a href="https://www.mongodb.com/products/compass">Compass</a></li>
+            <li><a href="https://robomongo.org/">Robo 3T</a></li>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode">VS Code</a></li>
+
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="query-structure" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Query Structure</h1>
+        <p>The "find" command accepts "filter" and "projection" parameters. In this case, filter is our search/match query and projection is an optional object that defines what fields to return in the documents that matched filter. If projection is not specified, all fields are returned by default.</p>
+        
+        <pre><code class="javascript">db.widgets.find({ "color": { $eq: "blue"} });
+db.widgets.find({ "color": "blue" });
+db.widgets.find({ "color": "blue" }, { "_id": 0 });</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="implicit-and" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Implicit "AND"</h1>
+        <p>We can specify multiple equality checks at once by comma separating them. These will be understood to be logically "AND"d so the query will match documents where each evaluates as true</p>
+        
+        <pre><code class="javascript"> db.widgets.find({ "color": "blue", "name": "widget1", "size": 10 });</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="nested-documents" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Nested Documents and Arrays</h1>
+        <pre><code class="javascript">{
+    "name": "widget",
+    "physicalProperties": {
+        "color": "green",
+        "weight": 10
+    },
+    "tags": ["fun", "cheap", "widgety"]
+}</code></pre>
+
+        Query nested property / array element :
+        <pre><code class="javascript">db.widgets.find({ "physicalProperties.color": "green" });
+db.widgets.find({ "tags": "fun" });</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="comparison-operators" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Comparison Operators</h1>
+        <ul>
+            <li>$eq</li>
+            <li>$gt</li>
+            <li>$gte</li>
+            <li>$in</li>
+            <li>$lt</li>
+            <li>$lte</li>
+            <li>$ne</li>
+            <li>$nin</li>
+        </ul>
+        
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="logical-operators" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Logical Operators</h1>
+        <ul>
+            <li>$and</li>
+            <li>$not</li>
+            <li>$nor</li>
+            <li>$or</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="element-and-eval" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Element and Evaluation Operators</h1>
+        <ul>
+            <li>$exists</li>
+            <li>$type</li>
+            <li>$mod</li>
+            <li>$regex</li>
+            <li>$text</li>
+            <li>$where (Javascript eval)</li>
+        </ul>
+        
+       
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="array-operators" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Array Operators</h1>
+        <ul>
+            <li>$all</li>
+            <li>$elemMatch</li>
+            <li>$size</li>
+
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="js-correlation" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Javascript Logic Comparison</h1>
+        <p>Translate the following Javascript conditionals into Mongo queries : </p>
+        
+        <pre><code class="javascript">if (widget.color === 'blue' && widget.size > 10)
+
+if (widget.color === 'green' && widget.size <= 5)
+
+if ((widget.color === 'blue' && widget.size > 10) || (widget.color === 'green' && widget.size <= 5))
+        </code></pre>
+        
+        A JSON editor can be extremely helpful to keep your braces under control.
+        <div class="notes">
+        </div>
+    </div>
+
+
+    <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
+         so that it covers all the other slides you just saw. 
+         It's a common way of zooming out at the end, to show the whole presentation.
+         In CSS, we set pointer-events:none to make this slide non-clickable. 
+         It makes a difference at least for SVG content, such as the mermaid diagram. -->
+    <div id="overview" class="step" data-x="4500" data-y="1500" data-scale="10" style="pointer-events: none;">
+    </div>
+</div>
+
+<!--
+    Add navigation-ui controls: back, forward and a select list.
+    Add a progress indicator bar (current step / all steps)
+    Add the help popup plugin
+-->
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js, markdown.js and MathJax.js from extras.
+     If you're curious about details, these are initialized in src/plugins/extras/extras.js 
+<script type="text/javascript" src="../../resources/impress.js/extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mermaid/mermaid.min.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+-->
+<link rel="stylesheet" href="../../resources/highlight.js/styles/darcula.css">
+<script type="text/javascript" src="../../resources/highlight.js/highlight.pack.js"></script>
+
+<!--
+    To make all described above really work, you need to include impress.js in the page.
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. 
+-->
+<script type="text/javascript" src="../../resources/impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>

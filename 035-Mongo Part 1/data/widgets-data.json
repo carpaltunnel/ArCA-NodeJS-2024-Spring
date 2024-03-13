@@ -1,0 +1,113 @@
+[
+  {
+    "id": "86384d8c-701d-4623-9e2b-a3fcd5c0bb77",
+    "name": "widget1",
+    "color": "blue",
+    "weight": 10,
+    "tags": ["fun", "medium", "blue"],
+    "tracking": {
+      "createdBy": "user1",
+      "lastUpdatedBy": "user1",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "01ae16a0-050d-4bdf-a409-8d9e38e3c783",
+    "name": "widget2",
+    "color": "red",
+    "weight": 5,
+    "tags": ["boring", "small", "red"],
+    "tracking": {
+      "createdBy": "user2",
+      "lastUpdatedBy": "user1",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "f207a637-d8f5-4691-b408-bf7d281dfc06",
+    "name": "widget3",
+    "color": "green",
+    "weight": 25,
+    "tags": ["obsolete", "large", "green"],
+    "tracking": {
+      "createdBy": "user1",
+      "lastUpdatedBy": "user3",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "60e80124-5eb9-4271-b6a2-f7037d4db5cd",
+    "name": "widget4",
+    "color": "maroon",
+    "weight": 20,
+    "tags": ["red", "large", "cheap"],
+    "tracking": {
+      "createdBy": "user3",
+      "lastUpdatedBy": "user3",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "df858ac8-6425-4b17-a1a6-0aaf317d5864",
+    "name": "widget5",
+    "color": "aquamarine",
+    "weight": 2,
+    "tags": ["blue", "small", "expensive"],
+    "tracking": {
+      "createdBy": "user1",
+      "lastUpdatedBy": "user4",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "0e6cd25c-db75-4123-b5c3-0c7378a42679",
+    "name": "widget6",
+    "color": "olive",
+    "weight": 12,
+    "tags": ["kitchen", "medium", "green"],
+    "tracking": {
+      "createdBy": "user1",
+      "lastUpdatedBy": "user1",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "4d4e4a71-f020-46ea-bb1e-01e0b08317a4",
+    "name": "widget7",
+    "color": "cerulean",
+    "weight": 6,
+    "tags": ["small", "blue", "living"],
+    "tracking": {
+      "createdBy": "user2",
+      "lastUpdatedBy": "user4",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "b68ba166-dfff-48cb-acf0-cc0500cf2095",
+    "name": "widget8",
+    "color": "red",
+    "weight": 23,
+    "tags": ["red", "large", "home"],
+    "tracking": {
+      "createdBy": "user5",
+      "lastUpdatedBy": "user1",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "124c63d1-688a-4599-a818-c34e143ac67f",
+    "name": "widget9",
+    "color": "seafoam",
+    "weight": 2,
+    "tags": ["small", "kitchen", "green"],
+    "tracking": {
+      "createdBy": "user4",
+      "lastUpdatedBy": "user4",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }, {
+    "id": "ef367f89-55cd-47fa-8fd5-ea113263bc33",
+    "name": "widget10",
+    "color": "periwinkle",
+    "weight": 13,
+    "tags": ["blue", "medium", "fun"],
+    "tracking": {
+      "createdBy": "user5",
+      "lastUpdatedBy": "user2",
+      "lastUpdatedDate": "2021-06-10T20:27:16.512Z"
+    }
+  }
+]
