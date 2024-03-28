@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Slides</title>
+
+    <!-- This file contains common styles for example presentations. -->
+    <link href="../../resources/impress.js/css/impress-common.css" rel="stylesheet" />   
+    <!--
+        This file contains styles specific for this example presentation. 
+    -->
+    <link href="../../resources/impress.js/css/classic-slides.css" rel="stylesheet" />
+    
+</head>
+
+<body class="impress-not-supported">
+<!--
+    This fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    This is the core element used by impress.js: the wrapper for your presentation steps. 
+    In this element all the impress.js magic happens.
+    
+    data-transition-duration sets the time in microseconds that is used for the
+    animation when transtitioning between slides.
+    
+    The width, height, scale and perspective options define a target screen size that you should
+    design your CSS against. impress.js will automatically scale all content to different screen
+    sizes. See DOCUMENTATION.md for details. Below, I have targeted full HD screen resolution.
+    
+    data-autoplay can be used to set the time in seconds, after which presentation
+    automatically moves to next slide. It can also be set individually for each
+    slide, but here we just set a common duration for all slides.
+-->
+<div id="impress"
+    data-transition-duration="1000"
+
+    data-width="1920"
+    data-height="1080"
+    data-max-scale="3"
+    data-min-scale="0"
+    data-perspective="1000"
+>
+
+    <!--
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        This step is auto-assigned the id "step-1". You can also use `#step-1` in a link, to 
+        point directly to this particular step.
+        
+        Positioning information is passed through data-* attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'. It will not 
+        be rotated or scaled.
+        
+        The "step" class is what *must* be used for every "slide". In this example we also use the "slide"
+        class, which adds a rectangle with some background and makes this presentation look like a traditional
+        powerpoint slide show. The "slide" class is entirely optional and indeed you wouldn't use it for
+        your cooler impress.js presentations.
+    -->
+    <div id="title" class="step slide title" data-x="-2200" data-y="-3000">
+        <h1>MongoDB Indexes</h1>
+        <br /><br />
+        <br /><br />
+        If you're familiar with the concept of an index in a relational database, the same general concepts are true in MongoDB.
+        
+        <div class="notes">
+        </div>
+    </div>
+
+
+    <div id="purpose" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Index Purpose</h1>
+        <p>Indexes function like a lookup list</p>
+        <ul>
+            <li>Quick reference to where the desired data is at</li>
+            <li>Stored ordered for efficient equality / ranged queries</li>
+            <li>Order can be used for sorted results</li>
+            <li><code>_id</code></li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="query-planner1" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Query Planner / Explain Plan</h1>
+        <p>If you're familiar with an "explain plan" in Oracle or other traditional RDBMS's, you'll find the same functionality in Mongo.
+            The Query Planner : 
+        </p>
+        
+        <ul>
+            <li>Analyzes queries</li>
+            <li>Chooses the most efficient way to execute it</li>
+            <li>Caches the execution plan</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+    
+    <div id="query-planner2" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Query Planner Data</h1>
+        <p>To view the explain plan that the query planner decides on, execute your query as normal but append a .explain() call to the end. </p>
+        
+        <pre><code class="javascript">db.widgets.find({ id: "test" }).explain();</code></pre>
+
+        <p>A full collection scan (COLLSCAN) is the least efficient query path to choose.  So, let's look at index types then add one.</p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="index-types" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Index Types</h1>
+        <ul>
+            <li>Single field - One field, with sort order</li>
+            <li>Compound - Multiple fields, with sort order on each</li>
+            <li>Multikey (array) - We'll come back to this</li>
+            <li>Geospatial - 2d planar or 2dsphere indexes</li>
+            <li>Text - Designed to support string searching of documents. You can only use the $text operator on Text indexes. </li>
+            <li>Hashed - A hashed index stores the hash of the value of a field. This provides a more random distribution of values but only supports equality matches</li>
+        </ul>
+        
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="index-properties" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Index Properties (Options)</h1>
+        <p>There are multiple properties (options) that can be applied to an index to determine how it functions to match your requirements.</p>
+        
+        <ul>
+            <li>Unique - Defines a unique index.</li>
+            <li>Partial - Defines an index that will only include documents that meet specified filter expressions. Similar to a Sparse index.</li>
+            <li>Sparse - Sparse will only index documents that have the specified field.</li>
+            <li>TTL (Time To Live) - TTL indexes allow you to automatically delete documents after a specified amount of time. </li>
+            <li>Hidden (as of v4.4) - Hidden indexes are not visible to the query planner and will not be used under any circumstance.</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="creating-indexes" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Creating Indexes</h1>
+        <p>The syntax to create an index is db.collectionName.createIndex(<index-definition>, <options>). The index definition sets the indexed field(s) as well as the order. </p>
+
+        
+        <pre><code class="javascript">createIndex({ id: 1}, { unique: true });
+// Partial index on "name" field where "weight" > 10
+createIndex({ name: 1 }, { partialFilterExpression: { weight: { $gt: 10 } } });
+// Partial index on "name" field where "name" field exists (equivalent to a "sparse" index)
+createIndex({ name: 1 }, { partialFilterExpression: { name: { $exists: true } } });
+
+createIndex({ name: 1 }, { sparse: true });
+// TTL index on "createdDate" that will remove documents after 12 hours (12 * 60 * 60 seconds)
+createIndex({ createdDate: 1 }, { expireAfterSeconds: 43200 })
+// Hidden index on "name" field
+createIndex({ name: 1 }, { hidden: true });</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="listing-indexes" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Listing Indexes</h1>
+        <p>The existing indexes on a collection can be retrieved with db.collectionName.getIndexes() on the the Mongo shell/CLI. This will return an array that contains an object for each defined index and the field(s) that are indexed, along with the sort definition. The name property of the indexes may be the autogenerated name or the explicitly defined name</p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="important-notes" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Important Index Notes</h1>
+        <p>In order to make use of an index the following must be considered :</p>
+        
+        <ol>
+            <li>An index must exist on the field</li>
+            <li>The index sort fields and direction must match the query sort direction <strong>and be in the same order</strong></li>
+            <li>A compound index can be used for a simpler query if it's a "prefix"</li>
+            <li>Indexes should fit into memory (RAM) for efficiency</li>
+        </ol>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="multikey-indexes" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Multikey Indexes (Arrays)</h1>
+        <p>When an index is created on an array field, a separate index entry is created for each element of the array. This allows for quick and easy querying on the array elements but comes at the cost of a larger index. If you're creating an index on an array that can have a large number of items, performance should be evaluated to ensure that the index does not have a negative impact. </p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="index-names" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Index Names</h1>
+        <p>The default name for an index is the name of each indexed key, an indication of the sort direction, concatenated with an underscore.</p>
+        
+        <pre><code class="javascript"> db.collectionName.createIndex({ name: 1 }, { name: "name_ascending" })</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="covered-queries" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Covered Queries</h1>
+        <p>A "covered" query is a query that only includes the fields of the index in the projection.</p>
+        <br />
+        <p> These are probably going to be the fastest queries you will get so it can be extremely beneficial to optimize for covered queries for your most heavily used requests.</p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="restrictions" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Index Restrictions</h1>
+        <p>There are a few restictions to indexes that can be created in MongoDB :</p>
+        
+        <ol>
+            <li>The maximum number of indexes for a collection is 64</li>
+            <li>The index name is limited to 127 bytes in MongoDB 4.2 and earlier. Newer compatibility modes can remove that limit.</li>
+            <li>A maximum of 32 fields are allowed in a compound index</li>
+            <li>Queries can not combine $text and geospatial indexes</li>
+            <li>All general operations will fail if a document contains a field that exceeds the index key limit</li>
+        </ol>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="what-to-index" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>What to Index?</h1>
+        <p></p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+
+    <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
+         so that it covers all the other slides you just saw. 
+         It's a common way of zooming out at the end, to show the whole presentation.
+         In CSS, we set pointer-events:none to make this slide non-clickable. 
+         It makes a difference at least for SVG content, such as the mermaid diagram. -->
+    <div id="overview" class="step" data-x="4500" data-y="1500" data-scale="10" style="pointer-events: none;">
+    </div>
+</div>
+
+<!--
+    Add navigation-ui controls: back, forward and a select list.
+    Add a progress indicator bar (current step / all steps)
+    Add the help popup plugin
+-->
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js, markdown.js and MathJax.js from extras.
+     If you're curious about details, these are initialized in src/plugins/extras/extras.js 
+<script type="text/javascript" src="../../resources/impress.js/extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mermaid/mermaid.min.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+-->
+<link rel="stylesheet" href="../../resources/highlight.js/styles/darcula.css">
+<script type="text/javascript" src="../../resources/highlight.js/highlight.pack.js"></script>
+
+<!--
+    To make all described above really work, you need to include impress.js in the page.
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. 
+-->
+<script type="text/javascript" src="../../resources/impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
