@@ -1,0 +1,124 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Widgets App",
+    "description": "This is a sample API for widgets",
+    "version": "3.0.1"
+  },
+  "components": {
+    "schemas": {
+      "widget": {
+        "$ref": "schemas/widget.json#/components/schemas/widget"
+      }
+    }
+  },
+  "paths": {
+    "/widgets": {
+      "get": {
+        "description": "Fetch a list of widgets",
+        "summary": "Widget list",
+        "operationId": "getWidgets",
+        "responses": {
+          "200": {
+            "description": "List of widgets response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/widget"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new widget",
+        "summary": "Create widget",
+        "operationId": "createWidget",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/widget"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Created a new widget successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/widget"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/widgets/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get a widget by ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/widget"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/widget"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated a new widget successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/widget"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

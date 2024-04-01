@@ -1,0 +1,168 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Widgets App",
+    "description": "This is a sample API for widgets",
+    "version": "3.0.1"
+  },
+  "components": {
+    "schemas": {
+      "widget": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the widget",
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "description": "Name of the widget that will be displayed to users",
+            "type": "string",
+            "minLength": 3
+          },
+          "color": {
+            "description": "Item color",
+            "type": "string",
+            "enum": ["red", "green", "blue"]
+          },
+          "weight": {
+            "description": "Item weight in kilograms",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 25
+          },
+          "tags": {
+            "description": "Item tags for searching",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tracking": {
+            "type": "object",
+            "properties": {
+              "lastUpdated": {
+                "description": "Date this widget was last updated",
+                "type": "string",
+                "format": "date-time"
+              },
+              "lastUpdatedBy": {
+                "description": "User ID that last updated the widget",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/widgets": {
+      "get": {
+        "description": "Fetch a list of widgets",
+        "summary": "Widget list",
+        "operationId": "getWidgets",
+        "responses": {
+          "200": {
+            "description": "List of widgets response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/widget"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new widget",
+        "summary": "Create widget",
+        "operationId": "createWidget",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/widget"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Created a new widget successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/widget"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/widgets/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get a widget by ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/widget"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/widget"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated a new widget successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/widget"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

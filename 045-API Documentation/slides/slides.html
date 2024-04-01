@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Slides</title>
+
+    <!-- This file contains common styles for example presentations. -->
+    <link href="../../resources/impress.js/css/impress-common.css" rel="stylesheet" />   
+    <!--
+        This file contains styles specific for this example presentation. 
+    -->
+    <link href="../../resources/impress.js/css/classic-slides.css" rel="stylesheet" />
+    
+</head>
+
+<body class="impress-not-supported">
+<!--
+    This fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    This is the core element used by impress.js: the wrapper for your presentation steps. 
+    In this element all the impress.js magic happens.
+    
+    data-transition-duration sets the time in microseconds that is used for the
+    animation when transtitioning between slides.
+    
+    The width, height, scale and perspective options define a target screen size that you should
+    design your CSS against. impress.js will automatically scale all content to different screen
+    sizes. See DOCUMENTATION.md for details. Below, I have targeted full HD screen resolution.
+    
+    data-autoplay can be used to set the time in seconds, after which presentation
+    automatically moves to next slide. It can also be set individually for each
+    slide, but here we just set a common duration for all slides.
+-->
+<div id="impress"
+    data-transition-duration="1000"
+
+    data-width="1920"
+    data-height="1080"
+    data-max-scale="3"
+    data-min-scale="0"
+    data-perspective="1000"
+>
+
+    <!--
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        This step is auto-assigned the id "step-1". You can also use `#step-1` in a link, to 
+        point directly to this particular step.
+        
+        Positioning information is passed through data-* attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'. It will not 
+        be rotated or scaled.
+        
+        The "step" class is what *must* be used for every "slide". In this example we also use the "slide"
+        class, which adds a rectangle with some background and makes this presentation look like a traditional
+        powerpoint slide show. The "slide" class is entirely optional and indeed you wouldn't use it for
+        your cooler impress.js presentations.
+    -->
+    <div id="title" class="step slide title" data-x="-2200" data-y="-3000">
+        <h1>API Documentation</h1>
+        <br /><br />
+        <br /><br />
+        While not terribly interesting, documentation is an essential part of any project.
+        <div class="notes">
+        </div>
+    </div>
+
+
+    <div id="open-api" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Open API</h1>
+        <p>The <a href="https://spec.openapis.org/oas/v3.0.1">OpenAPI Specification</a> defines how we'll describe and document our API while Swagger provides a convenient UI/interpreter that is easy to use and navigate. It supports both JSON and YAML type definitions. We'll stick to JSON since we're using it everywhere else but will show a YAML comparison because the YAML definition is a bit more brief and easy to use</p>
+    
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="required-fields" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Required Root Level Fields</h1>
+        <p>The OpenAPI spec defines the following required top level fields</p>
+        
+        <ol>
+            <li><code>openapi</code> - The OpenAPI spec version the document adheres to</li>
+            <li><code>info</code> - Metadata about the API (title, description, version)</li>
+            <li><code>paths </code> - Available paths and operations in the API</li>
+        </ol>
+        
+        <div class="notes">
+        </div>
+    </div>
+    
+    <div id="" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Optional Root Level Fields</h1>
+        <p>The following top level fields are optional :</p>
+        
+        
+        <ol>
+            <li><code>servers </code> - Array of server objects that define where the API is found</li>
+            <li><code>components</code> -  Defines the schemas and other reusables in the spec</li>
+            <li><code>security </code> - Definition of the security mechanisms used in the API</li>
+            <li><code>tags</code> - Object that defines the tags used in the API with descriptions</li>
+            <li><code>externalDocs</code> - Additional external documentation</li>
+        </ol>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="info-object" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h2><code>info</code></h2>
+        <p>The info object supports the following properties where required fields are marked with an asterisk (*) </p>
+        <ol>
+            <li><code>*title</code> - Title of the API</li>
+            <li><code>description</code> - Short description of the API</li>
+            <li><code>termsOfService</code> - URL (only a URL) to the terms of service</li>
+            <li><code>contact</code> - Contact information for the API company/team</li>
+            <li><code>license </code> - API license</li>
+            <li><code>*version</code> - API version. Not the OpenAPI version, the version of the API being described</li>
+        </ol>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="components-object" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h2><code>components</code></h2>
+        <p>The components section contains reusable blocks of definitions for (re)use elsewhere in our spec. This is a great place to store things like schemas, requestBodies, responses, and parameters that will be used multiple times in the spec.</p>
+        
+        <ul>
+            <li><code>schemas</code></li>
+            <li><code>responses</code></li>
+            <li><code>parameters</code></li>
+            <li><code>examples</code></li>
+            <li><code>requestBodies</code></li>
+            <li><code>headers</code></li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="components-object2" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>components</code> Continued</h1>
+        <ul>
+            <li><code>securitySchemes</code></li>
+            <li><code>links</code></li>
+            <li><code>callbacks</code></li>
+        </ul>
+        
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="schemas1" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h2><code>schemas</code></h2>
+        <p>The schema object defines data types in your spec. This is an extended subset of the JSON Schema that we have looked at previously and functions generally the same.  The following are taken directly from the JSON Schema spec</p>
+        
+        <ul>
+            <li><code>title</code></li>
+            <li><code>multipleOf</code></li>
+            <li><code>maximum</code></li>
+            <li><code>exclusiveMaximum</code></li>
+            <li><code>minimum</code></li>
+            <li><code>exclusiveMinimum</code></li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="schemas2" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h2><code>schemas</code> Continued</h2>
+        <ul>
+            <li><code>maxLength</code></li>
+            <li><code>minLength</code></li>
+            <li><code>pattern</code> (regex)</li>
+            <li><code>maxItems</code></li>
+            <li><code>minItems</code></li>
+            <li><code>uniqueItems</code></li>
+        </ul>
+
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="schemas3" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h2><code>schemas</code> Continued (again)</h2>
+        <ul>
+            <li><code>maxProperties</code></li>
+            <li><code>minProperties</code></li>
+            <li><code>required</code></li>
+            <li><code>enum</code></li>
+        </ul>
+
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="schemas4-nonstandard" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>schemas</code> : Non-JSON Schema Standard</h1>
+        <p>These properties are taken from the JSON Schema spec but have a slightly different definition.</p>
+        
+        <ul>
+            <li><code>type</code> - String, only a single value is supported</li>
+            <li><code>allOf</code> - Inline or referenced schema must be an OpenAPI Schema object, not a JSON Schema</li>
+            <li><code>oneOf</code> - Same as above</li>
+            <li><code>anyOf</code> - Same as above</li>
+            <li><code>not</code> - Same as above</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="schemas4-nonstandard2" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>schemas</code>: Non-JSON Schema, continued</h1>
+        <ul>
+            <li><code>items</code> - Must be an object, not an array. Schema must be an OpenAPI Schema object, not a JSON Schema</li>
+            <li><code>properties</code> - Schema must be an OpenAPI Schema object, not a JSON Schema</li>
+            <li><code>additionalProperties</code> - Boolean or object. If object, must be an OpenAPI schema object</li>
+            <li/code>description</code> - May contain CommonMark syntax</li>
+            <li><code>format</code> - OpenAPI offers a few extra formats compared to JSON schema</li>
+            <li><code>default</code> - Must match the type of this schema</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="headers" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>headers</code></h1>
+        <p>The header object has the same structure as the Parameters object with minor changes</p>
+        
+        <ul>
+            <li><code>name</code> must not be specified, it is taken from the headers key</li>
+            <li><code>in</code> must not be specified since we're explicitly defining headers so... they'll be in the header.</li>
+            <li>All traits affected by location must adhere to a header</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="requestBodies" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>requestBodies</code></h1>
+        <p>The request body object defines the possible request body types and contents that can be supplied to an endpoint. The request body object itself is quite simple with all the body definition being done in the content nested Media Type object. The base properties are :</p>
+        
+        <ul>
+            <li><code>description</code></li>
+            <li><code>required</code></li>
+            <li><code>content</code> - Map of media type keys where the value describes it.</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="media-type" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Media-Types (<code>content</code>)</h1>
+        <p>The media type object, defined by the content keys, provides a schema and examples that define the associated request body. Available properties are :</p>
+        
+        <ul>
+            <li><code>schema</code> - Obviously the most important, this is a Schema type object that defines the body</li>
+            <li><code>example</code> - A request body example that adheres to the schema</li>
+            <li><code>examples</code> - Same as example, but an array with multiple examples</li>
+            <li><code>encoding</code> - Object to define the various encoding types</li>
+        </ul>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="paths" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1><code>paths</code></h1>
+        <p>We discussed the <code>paths</code> object earlier.  Here is a very simple example, but we'll implement a full one shortly.</p>
+        
+        <pre><code class="javascript">{
+    "paths": {
+        "/widgets/{id}": {
+            "get": {},
+            "put": {},
+            "delete": {}
+        }
+}</code></pre>
+        
+        Use everything so far to build a monolithic OpenAPI doc.
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="references" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h2>References</h2>
+        <p>References allow reuse of definitions to avoid code duplication with the <code>$ref</code> keyword</p>
+        
+        <pre><code class="javascript">"/widgets/{id}": {
+        "get": {
+            "responses": {
+                "200": {
+                    "description": "Get a widget by ID",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/widget"
+                            }
+                        }
+                    }
+                }
+    ...</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="convert-spec-ref" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Use References</h1>
+        <br /><br />
+        <p>Now, let's rework our API spec to use references and avoid all the schema code duplication.</p>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="split-schema" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Multi-File Definitions</h1>
+        <p>We can use <code>$ref</code> to reference other files.  This allows us to 
+        make our definition files smaller and easier to manage by splitting the large parts,
+    like schemas, into dedicated files.</p>
+        
+        <pre><code class="javascript">"components": {
+    "schemas": {
+        "widget": {
+            "$ref": "schemas/widget.json#/components/schemas/widget"
+        }
+    }
+}</code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="testing-and-dev" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Testing and Development</h1>
+        <br />
+        <p>The <a href="https://editor.swagger.io/">Swagger Editor</a> is great for easy development and testing of single file specs but it can't natively handle specifications that are split across multiple files. The <a href="https://petstore.swagger.io/">Swagger UI</a> can, but only if those files are publicly available on the internet. You could host it on Github or some other public location, but for local-only development we need a few more steps.</p>
+
+        <div class="notes">
+        </div>
+    </div>
+
+    <div id="testing-and-dev2" class="step slide" data-rel-x="2200" data-rel-y="0">
+        <h1>Local Swagger UI</h1>
+        <p>Download the <a href="https://swagger.io/tools/swagger-ui/download/">Swagger UI</a> project and install <a href="https://www.npmjs.com/package/http-server">http-server</a> globally (NPM)</p>
+        
+        <pre><code class="javascript">// Swagger UI directory
+npm start
+cd ./my/openapi/directory
+http-server --cors -a 127.0.0.1
+// Open browser to  http://127.0.0.1:3002
+// Enter JSON spec file of http://127.0.0.1:8080/your-spec-file.json
+        </code></pre>
+        
+        <div class="notes">
+        </div>
+    </div>
+
+
+    <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
+         so that it covers all the other slides you just saw. 
+         It's a common way of zooming out at the end, to show the whole presentation.
+         In CSS, we set pointer-events:none to make this slide non-clickable. 
+         It makes a difference at least for SVG content, such as the mermaid diagram. -->
+    <div id="overview" class="step" data-x="4500" data-y="1500" data-scale="10" style="pointer-events: none;">
+    </div>
+</div>
+
+<!--
+    Add navigation-ui controls: back, forward and a select list.
+    Add a progress indicator bar (current step / all steps)
+    Add the help popup plugin
+-->
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js, markdown.js and MathJax.js from extras.
+     If you're curious about details, these are initialized in src/plugins/extras/extras.js 
+<script type="text/javascript" src="../../resources/impress.js/extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mermaid/mermaid.min.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="../../resources/impress.js/extras/mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+-->
+<link rel="stylesheet" href="../../resources/highlight.js/styles/darcula.css">
+<script type="text/javascript" src="../../resources/highlight.js/highlight.pack.js"></script>
+
+<!--
+    To make all described above really work, you need to include impress.js in the page.
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. 
+-->
+<script type="text/javascript" src="../../resources/impress.js/js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
