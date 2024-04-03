@@ -1,0 +1,181 @@
+{
+  "id": 427076,
+  "num_rows": 10,
+  "file_format": "json",
+  "name": "acds-initial",
+  "array": true,
+  "columns": [
+    {
+      "name": "id",
+      "null_percentage": 0,
+      "type": "GUID",
+      "formula": null
+    },
+    {
+      "name": "firstName",
+      "null_percentage": 0,
+      "type": "First Name",
+      "formula": null
+    },
+    {
+      "name": "lastName",
+      "null_percentage": 0,
+      "type": "Last Name",
+      "formula": null
+    },
+    {
+      "name": "email",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": null
+    },
+    {
+      "name": "gender",
+      "null_percentage": 20,
+      "type": "Gender",
+      "formula": null
+    },
+    {
+      "name": "ipAddress",
+      "null_percentage": 0,
+      "type": "IP Address v4",
+      "formula": null
+    },
+    {
+      "name": "latitude",
+      "null_percentage": 0,
+      "type": "Latitude",
+      "formula": null
+    },
+    {
+      "name": "longitude",
+      "null_percentage": 0,
+      "type": "Longitude",
+      "formula": null
+    },
+    {
+      "name": "favoriteColors[0-3]",
+      "null_percentage": 0,
+      "type": "Color",
+      "formula": null
+    },
+    {
+      "name": "address.address1",
+      "null_percentage": 0,
+      "type": "Street Address",
+      "formula": null
+    },
+    {
+      "name": "address.city",
+      "null_percentage": 0,
+      "type": "City",
+      "formula": null
+    },
+    {
+      "name": "address.state",
+      "null_percentage": 0,
+      "type": "State (abbrev)",
+      "onlyUSPlaces": true,
+      "formula": null
+    },
+    {
+      "name": "address.zipCode",
+      "null_percentage": 0,
+      "type": "Postal Code",
+      "formula": null
+    },
+    {
+      "name": "hobbies[0-5]",
+      "null_percentage": 10,
+      "type": "Custom List",
+      "values": [
+        "music",
+        "baseball",
+        "soccer",
+        "football",
+        "painting",
+        "exercise",
+        "cycling",
+        "running",
+        "movies",
+        "programming",
+        "camping",
+        "hiking"
+      ],
+      "selectionStyle": "random",
+      "distribution": null,
+      "formula": null
+    },
+    {
+      "name": "tracking.dateAdded",
+      "null_percentage": 0,
+      "type": "Datetime",
+      "min": "02/01/2019",
+      "max": "07/01/2022",
+      "format": "%Y-%m-%dT%H:%M:%SZ",
+      "formula": null
+    },
+    {
+      "name": "tracking.dateUpdated",
+      "null_percentage": 40,
+      "type": "Datetime",
+      "min": "02/01/2019",
+      "max": "07/01/2022",
+      "format": "%Y-%m-%dT%H:%M:%SZ",
+      "formula": null
+    },
+    {
+      "name": "tracking.updatedBy",
+      "null_percentage": 0,
+      "type": "Username",
+      "formula": null
+    },
+    {
+      "name": "age",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 110,
+      "decimals": 0,
+      "formula": null
+    },
+    {
+      "name": "vehicles",
+      "null_percentage": 0,
+      "type": "JSON Array",
+      "minItems": 0,
+      "maxItems": 5,
+      "formula": null
+    },
+    {
+      "name": "vehicles.vin",
+      "null_percentage": 0,
+      "type": "Car VIN",
+      "formula": null
+    },
+    {
+      "name": "vehicles.color",
+      "null_percentage": 0,
+      "type": "Color",
+      "formula": null
+    },
+    {
+      "name": "vehicles.make",
+      "null_percentage": 0,
+      "type": "Car Make",
+      "formula": null
+    },
+    {
+      "name": "vehicles.model",
+      "null_percentage": 0,
+      "type": "Car Model",
+      "formula": null
+    },
+    {
+      "name": "vehicles.year",
+      "null_percentage": 0,
+      "type": "Car Model Year",
+      "formula": null
+    }
+  ]
+}

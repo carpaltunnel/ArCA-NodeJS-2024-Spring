@@ -1,0 +1,56 @@
+[
+  {
+    "id": "programming",
+    "description": "Computer programming is the process of performing a particular computation (or more generally, accomplishing a specific computing result)",
+    "rating": 10,
+    "group": "computers"
+  },
+  {
+    "id": "music",
+    "description": "Music is the art of arranging sound. It is one of the universal cultural aspects of all human societies.",
+    "rating": 9.9,
+    "group": "arts"
+  },
+  {
+    "id": "movies",
+    "description": "A film – also called a movie, motion picture, moving picture, picture or photoplay – is a work of visual art that simulates experiences and otherwise communicates ideas, stories, perceptions, feelings, beauty, or atmosphere through the use of moving images. ",
+    "rating": 9.4,
+    "group": "arts"
+  },
+  {
+    "id": "painting",
+    "description": "Painting is the practice of applying paint, pigment, color or other medium to a solid surface",
+    "rating": 7.5,
+    "group": "arts"
+  },
+  {
+    "id": "baseball",
+    "description": "Baseball is a bat-and-ball sport played between two teams of nine players each, taking turns batting and fielding. ",
+    "rating": 7,
+    "group": "sports"
+  },
+  {
+    "id": "soccer",
+    "description": "Association football, more commonly known as simply football or soccer,[a] is a team sport played between two teams of 11 players with the use of a spherical ball.",
+    "rating": 8,
+    "group": "sports"
+  },
+  {
+    "id": "running",
+    "description": "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. ",
+    "rating": 8,
+    "group": "outdoors"
+  },
+  {
+    "id": "hiking",
+    "description": "Hiking is a long, vigorous walk, usually on trails or footpaths in the countryside. ",
+    "rating": 9.6,
+    "group": "outdoors"
+  },
+  {
+    "id": "camping",
+    "description": "Camping is an outdoor activity involving overnight stays away from home, either without shelter or using basic shelter such as a tent or a recreational vehicle. ",
+    "rating": 9.5,
+    "group": "outdoors"
+  }
+]
