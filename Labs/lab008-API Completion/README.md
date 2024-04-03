@@ -10,8 +10,6 @@ Continuing from lab #7, add everything to make it a "real" API with MongoDB inte
    2. Request bodies
    3. Responses
    4. Parameters
-6. Write the JSON schema once, and reference it in your OpenAPI spec.
-7. Ensure the OpenAPI spec is readable by Swagger UI.
 8. Add linting using the airbnb-base configuration
 9. ~~Add unit tests.  You have two options to deal with database integration : ~~
    1.  ~~Create setup/seed scripts with sample data that run before your tests to prepare the database for unit tests.  You can assume MongoDB will be running locally.~~
