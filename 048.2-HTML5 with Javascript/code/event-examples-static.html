@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Static HTML Events</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1 id="example" onClick="clicker()" style="color: blue">Example Page</h1>
+    <div id="content">
+      This is the <span id="main" class="spanner">main content</span> of the <span id="page" class="spanner">page</span>.
+    </div>
+
+    <script type="text/javascript">
+      const clicker = () => {
+        alert('You clicked the header!');
+      };
+    </script>
+  </body>
+</html>

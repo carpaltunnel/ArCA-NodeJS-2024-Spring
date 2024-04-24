@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Javascript embed with console.log</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1 id="example">Example Page</h1>
+    <div id="content">
+      This is the <span id="main" class="spanner">main content</span> of the <span id="page" class="spanner">page</span>.
+    </div>
+
+    <script type="text/javascript">
+      const divElements = document.getElementsByTagName('div');
+      console.log(`There is ${divElements.length} element with tag name 'div' and its contents are :`);
+      for (const el of divElements) {
+        console.log(`\t${el.innerHTML}`);
+      }
+    </script>
+  </body>
+</html>

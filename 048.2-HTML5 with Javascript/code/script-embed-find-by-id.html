@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Javascript embed with console.log</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script type="text/javascript">
+      const main = document.getElementById('main');
+      console.log(`The contents of the tag with id='main' are : ${main.innerHTML}`);
+    </script>
+    
+    <h1 id="example">Example Page</h1>
+    <div id="content">
+      This is the <span id="main" class="spanner">main content</span> of the <span id="page" class="spanner">page</span>.
+    </div>
+
+    <!-- script "text/javascript">
+      const main = document.getElementById('main');
+      console.log(`The contents of the tag with id='main' are : ${main.innerHTML}`);
+    </script -->
+  </body>
+</html>
