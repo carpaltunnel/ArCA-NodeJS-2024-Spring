@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Components</h1>
+
+    <br>
+    <h2>Accordion</h2>
+    <div class="container">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <br>
+    <h2>Alerts</h2>
+    <div class="container">
+      <div class="alert alert-primary alert-dismissable fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Primary alert
+      </div>
+      <div class="alert alert-secondary alert-dismissable fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Secondary alert
+      </div>
+      <div class="alert alert-success alert-dismissable fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        Success alert
+      </div>
+      <div class="alert alert-danger" role="alert">
+        Danger alert
+      </div>
+      <div class="alert alert-warning" role="alert">
+        Warning alert
+      </div>
+      <div class="alert alert-info" role="alert">
+        Informational alert
+      </div>
+      <div class="alert alert-light" role="alert">
+        Light alert
+      </div>
+      <div class="alert alert-dark" role="alert">
+        Dark alert
+      </div>
+    </div>
+
+    <br>
+    <h2></h2>
+    <div class="container">
+
+    </div>
+
+
+    <br>
+    <h2>Badges</h2>
+    <div class="container">
+      <h3>Text badge <span class="badge bg-secondary">Hello</span></h3>
+
+      <br>
+      <button type="button" class="btn btn-primary">
+        Unread Messages <span class="badge text-bg-secondary">4</span>
+      </button>
+
+      <br>
+      <br>
+      <br>
+      <button type="button" class="btn btn-primary position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          4
+          <span class="visually-hidden">Unread Messages</span>
+        </span>
+      </button>
+      <br><br>
+      <span class="badge text-bg-primary">Primary</span>
+      <span class="badge text-bg-secondary">Secondary</span>
+      <span class="badge text-bg-success">Success</span>
+      <span class="badge text-bg-danger">Danger</span>
+      <span class="badge text-bg-warning">Warning</span>
+      <span class="badge text-bg-info">Info</span>
+      <span class="badge text-bg-light">Light</span>
+      <span class="badge text-bg-dark">Dark</span>
+      <br><br>
+      <span class="badge rounded-pill text-bg-primary">Primary</span>
+      <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+      <span class="badge rounded-pill text-bg-success">Success</span>
+      <span class="badge rounded-pill text-bg-danger">Danger</span>
+      <span class="badge rounded-pill text-bg-warning">Warning</span>
+      <span class="badge rounded-pill text-bg-info">Info</span>
+      <span class="badge rounded-pill text-bg-light">Light</span>
+      <span class="badge rounded-pill text-bg-dark">Dark</span>
+    </div>
+
+    <br>
+    <h2>Buttons</h2>
+    <div class="container">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      
+      <button type="button" class="btn btn-link">Link</button>
+
+      <br><br>
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+
+      <br><br>
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+    </div>
+
+    <br>
+    <h2>Dropdowns</h2>
+    <div class="container">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Item 1</a></li>
+          <li><a class="dropdown-item" href="#">Item 2</a></li>
+          <li><a class="dropdown-item" href="#">Item 3</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown (success) button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <li><a class="dropdown-item" href="#">Item 1</a></li>
+          <li><a class="dropdown-item" href="#">Item 2</a></li>
+          <li><a class="dropdown-item" href="#">Item 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <br>
+    <h2>Modal</h2>
+    <div class="container">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              FYI - This is a modal window
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <br>
+    <h2></h2>
+    <div class="container">
+
+    </div>
+
+    <br>
+    <h2></h2>
+    <div class="container">
+
+    </div>
+
+    <br>
+    <h2></h2>
+    <div class="container">
+
+    </div>
+
+    <br>
+    <h2></h2>
+    <div class="container">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

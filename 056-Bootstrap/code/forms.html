@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Form Controls</h1>
+    <h2>Email/Password</h2>
+    <div class="container">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+        <div id="passwordHelpBlock" class="form-text">
+          Your password must be 10-20 characters long, contain letters and numbers, and at least one special character.
+        </div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="staySignedIn">
+        <label class="form-check-label" for="staySignedIn">Stay signed in</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    
+    <br>
+
+    <h2>Sizing Inputs</h2>
+    <div class="container">
+      <input class="form-control form-control-lg" type="text" placeholder="Large" aria-label=".form-control-lg example">
+      <input class="form-control" type="text" placeholder="Default" aria-label="default input example">
+      <input class="form-control form-control-sm" type="text" placeholder="Small" aria-label=".form-control-sm example">
+    </div>
+
+    <br>
+    <h2>Color Picker</h2>
+    <div class="container">
+      <label for="exampleColorInput" class="form-label">Color picker</label>
+      <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#0000ff" title="Choose your color">
+    </div>
+
+
+    <br>
+    <h2>Select/Dropdown and Multiselect</h2>
+    <div class="container">
+      <select class="form-select" aria-label="Select box (Dropdown)">
+        <option selected>Choose an option</option>
+        <option value="1">Option One</option>
+        <option value="2">Option Two</option>
+        <option value="3">Option Three</option>
+      </select>
+      <br>
+      <select class="form-select" multiple aria-label="Select box (Dropdown)">
+        <option selected>Choose one or multiple options</option>
+        <option value="1">Option One</option>
+        <option value="2">Option Two</option>
+        <option value="3">Option Three</option>
+      </select>
+    </div>
+
+    <br>
+    <h2>Checkboxes / Radios</h2>
+    <div class="container">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+          Checked checkbox
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Default radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Default checked radio
+        </label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+        <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+      </div>
+
+      <div>
+        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+        <label class="btn btn-secondary" for="option1">Checked</label>
+
+        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+        <label class="btn btn-secondary" for="option2">Radio</label>
+
+        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
+        <label class="btn btn-secondary" for="option3">Disabled</label>
+
+        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+        <label class="btn btn-secondary" for="option4">Radio</label>
+      </div>
+    </div>
+
+    <br>
+    <h2>Range</h2>
+    <div class="container">
+      <label for="customRange1" class="form-label">Select the range :</label>
+      <input type="range" min="0" max="25" class="form-range" id="customRange1">
+      <br><br>
+      <label for="customRange3" class="form-label">"Snap" range</label>
+      <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+    </div>
+
+    <br>
+    <h2>Input Groups</h2>
+    <div class="container">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+      </div>
+      
+      <label for="basic-url" class="form-label">URL</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+      </div>
+      
+      <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+    </div>
+
+    <br>
+    <h2>Floating Labels</h2>
+    <div class="container">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <div class="form-floating">
+        <select class="form-select" id="floatingSelect" aria-label="Select box (Dropdown)">
+          <option selected>Choose an option</option>
+          <option value="1">Option One</option>
+          <option value="2">Option Two</option>
+          <option value="3">Option Three</option>
+        </select>
+        <label for="floatingSelect">Select floating label</label>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
