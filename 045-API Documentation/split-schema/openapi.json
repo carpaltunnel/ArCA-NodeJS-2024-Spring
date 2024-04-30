@@ -8,7 +8,7 @@
   "components": {
     "schemas": {
       "widget": {
-        "$ref": "schemas/widget.json#/components/schemas/widget"
+        "$ref": "schemas/widget.json"
       }
     }
   },
